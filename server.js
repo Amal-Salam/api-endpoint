@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 const dotenv=require('dotenv');
 dotenv.config();
 
-app.get(`/api/hello/`, async (req, res) => {
+app.get('/api/hello', async (req, res) => {
   const name = req.query.visitor_name;
   
 
