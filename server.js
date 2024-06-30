@@ -7,13 +7,12 @@ dotenv.config();
 
 app.get('/api/hello', async (req, res) => {
   const name = req.query.visitor_name;
-  const clientIp=req.ip;
+ 
 
   try {
     // Get location info based on IP
-    
     const locationResponse = await axios.get(`https://ipinfo.io/`);
-    // const clientIp=locationResponse.data.ip || '0.0.0.0';
+    const clientIp=locationResponse.data.ip || '0.0.0.0';
     const city = locationResponse.data.city || 'Bodrum'; 
 
    
