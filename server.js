@@ -11,7 +11,11 @@ app.get('/api/hello', async (req, res) => {
 
   try {
     // Get location info based on IP
-    const locationResponse = await axios.get(`https://ipinfo.io/`);
+     const token=process.env.TOKEN;
+    const locationResponse = await axios.get(
+      `https://ipinfo.io/?token=${token}`
+    );
+    // const locationResponse = await axios.get(`https://ipinfo.io/`);
     const clientIp=locationResponse.data.ip || '0.0.0.0';
     const city = locationResponse.data.city || 'Bodrum'; 
 
