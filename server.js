@@ -15,7 +15,7 @@ app.get('/api/hello', async (req, res) => {
     const locationResponse = await axios.get(
       `https://ipinfo.io/?token=${token}`
     );
-    // const locationResponse = await axios.get(`https://ipinfo.io/`);
+  
     const clientIp=locationResponse.data.ip || '0.0.0.0';
     const city = locationResponse.data.city || 'Bodrum'; 
 
